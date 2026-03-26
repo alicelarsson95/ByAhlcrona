@@ -1,0 +1,15 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+}
+
+.navTitle {
+  color: var(--black);
+}

@@ -1,14 +1,15 @@
-
+import Navbar from "../components/Navbar/Navbar";
 
 const Home = () => {
   return (
     <>
-      <Hero />
+    <Navbar />
+      {/* <Hero />
       <Portfolio />
       <Shop />
       <About />
       <Contact />
-      <Footer />
+      <Footer /> */}
     </>
   );
 };
