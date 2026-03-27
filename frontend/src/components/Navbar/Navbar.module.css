@@ -1,10 +1,11 @@
 .nav {
   position: fixed;
   width: 100%;
-  background: var(--navbar);
+  background: transparent;
   top: 0;
   left: 0;
   z-index: 100;
+  transition: background 0.3s ease;
 }
 
 .container {
@@ -19,6 +20,7 @@
 
 .navTitle {
   color: var(--black);
+  font-size: var(--font-medium);
  
 }
 
@@ -47,4 +49,9 @@
 
 .navLink:hover::after {
   width: 100%;
+}
+
+.scrolled {
+  background: var(--white);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
