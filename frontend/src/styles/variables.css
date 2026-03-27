@@ -1,25 +1,42 @@
 :root {
-  /* colors */
+
+  /* COLORS */
+
   --white: #ffffff;
   --black: #000000;
   --grey-light: #bfbfbf;
   --grey-dark: #595959;
   --navbar: #ffcc99;
+  --background: #f8f8f8;
+  --background2: #fafafa;
 
-  /* font sizes */
+
+  /* FONT SIZES */
+
+  --font-xs: 12px;
   --font-small: 14px;
   --font-medium: 16px;
   --font-large: 24px;
   --font-xl: 32px;
+  --font-xxl: 48px;
+
 
   /* SPACING */
+
   --space-xs: 4px;
   --space-small: 8px;
   --space-medium: 16px;
   --space-large: 24px;
   --space-xl: 32px;
 
+
   /* BORDER RADIUS */
+
   --radius-small: 4px;
   --radius-medium: 8px;
+
+
+  /* LAYOUT */
+
+  --container-width: 1200px;
 }
