@@ -1,18 +1,17 @@
 :root {
 
   /* COLORS */
-
   --white: #ffffff;
   --black: #000000;
   --grey-light: #bfbfbf;
   --grey-dark: #595959;
-  --navbar: #ffcc99;
   --background: #f8f8f8;
-  --background2: #fafafa;
+  --skyblue: #CFDDFF;
+  --chocolate: #3D1900;
+  --pink: #ED9BBD;
 
 
   /* FONT SIZES */
-
   --font-xs: 12px;
   --font-small: 14px;
   --font-medium: 16px;
@@ -22,7 +21,6 @@
 
 
   /* SPACING */
-
   --space-xs: 4px;
   --space-small: 8px;
   --space-medium: 16px;
@@ -31,12 +29,10 @@
 
 
   /* BORDER RADIUS */
-
   --radius-small: 4px;
   --radius-medium: 8px;
 
 
   /* LAYOUT */
-
   --container-width: 1200px;
 }

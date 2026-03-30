@@ -1,14 +1,14 @@
 import Navbar from "../components/Navbar/Navbar";
 import Hero from "../components/Hero/Hero"
+import Portfolio from "../components/Portfolio/Portfolio";
 
 const Home = () => {
   return (
     <>
     <Navbar />
       <Hero />
-      <div style={{ height: "1500px" }}></div>
-      {/* <Portfolio />
-      <Shop />
+      <Portfolio />
+      {/* <Shop />
       <About />
       <Contact />
       <Footer />  */}
