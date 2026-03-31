@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar/Navbar";
 import Hero from "../components/Hero/Hero"
 import Portfolio from "../components/Portfolio/Portfolio";
+import Shop from "../components/Shop/Shop";
 
 const Home = () => {
   return (
@@ -8,10 +9,10 @@ const Home = () => {
     <Navbar />
       <Hero />
       <Portfolio />
-      {/* <Shop />
-      <About />
+       <Shop />
+      {/* <About />
       <Contact />
-      <Footer />  */}
+      <Footer />  */} 
     </>
   );
 };
