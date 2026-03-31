@@ -3,7 +3,9 @@
   margin: 0 auto;
   padding: 0 var(--space-medium);
   text-align: center;
-  margin-bottom: 100px;;
+  margin-bottom: 100px;
+  margin-top: 100px;
+  
 }
 
 .title {
@@ -26,32 +28,27 @@
 }
 
 .card {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  background: linear-gradient(
-    135deg,
-    var(--grey-light),
-    var(--grey-dark)
-  );
+  background: var(--white);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden
 }
 
-.card {
-  background: var(--white);
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
 .image {
   width: 100%;
   aspect-ratio: 1 / 1;
-  background: linear-gradient(
-    135deg,
-    var(--grey-light),
-    var(--grey-dark)
-  );
+  background: var(--grey-light);
 }
 
 .info {
   padding: var(--space-medium);
   text-align: left;
+  font-size: var(--font-small);
+  font-weight: 500;
 }
 
 .price {
