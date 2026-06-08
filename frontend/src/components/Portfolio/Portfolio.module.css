@@ -1,0 +1,74 @@
+.container {
+  text-align: center;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--space-medium);
+}
+
+.portfolioTitle {
+  font-size: var(--font-xxl);
+  font-weight: 300;
+  margin-bottom: var(--space-xs);
+}
+
+.divider {
+  width: 60px;
+  height: 1px;
+  background: var(--grey-dark);
+  margin: var(--space-medium) auto;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-medium);
+  margin-top: var(--space-large);
+}
+
+.buttons button {
+  padding: var(--space-small) var(--space-large);
+  border: 1px solid var(--grey-light);
+  background: transparent;
+  cursor: pointer;
+  font-size: var(--font-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.buttons button.active {
+  background: var(--black);
+  color: var(--white);
+  border: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-medium);
+  margin-top: var(--space-xl);
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: var(--grey-light);
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  color: var(--white);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
