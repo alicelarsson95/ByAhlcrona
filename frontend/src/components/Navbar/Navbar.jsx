@@ -15,7 +15,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const { totalItems, setIsOpen } = useCart();
   const location = useLocation();
-  const isShopPage = location.pathname === "/shop";
+  const isShopPage = location.pathname.startsWith("/shop");
 
   useEffect(() => {
     if (isShopPage) { setScrolled(true); return; }

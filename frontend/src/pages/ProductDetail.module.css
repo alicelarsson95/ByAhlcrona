@@ -1,0 +1,128 @@
+.page {
+  min-height: 100vh;
+  background: #f0f5ff;
+  padding: 120px 80px 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.back {
+  display: inline-block;
+  font-size: var(--font-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--grey-dark);
+  text-decoration: none;
+  margin-bottom: 48px;
+  transition: color 0.2s ease;
+}
+
+.back:hover {
+  color: var(--chocolate);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: var(--grey-light);
+}
+
+.infoCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-large);
+}
+
+.category {
+  display: inline-block;
+  font-size: var(--font-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  background: var(--skyblue);
+  color: var(--chocolate);
+  padding: 4px 10px;
+  font-weight: 600;
+  align-self: flex-start;
+}
+
+.title {
+  font-size: var(--font-xxl);
+  font-weight: 300;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.price {
+  font-size: var(--font-xl);
+  font-weight: 300;
+  color: var(--chocolate);
+  margin: 0;
+}
+
+.description {
+  font-size: var(--font-medium);
+  color: var(--grey-dark);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.meta {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-medium);
+  border-top: 1px solid var(--skyblue);
+  padding-top: var(--space-large);
+}
+
+.meta li {
+  display: flex;
+  gap: var(--space-large);
+  font-size: var(--font-small);
+}
+
+.metaLabel {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: var(--font-xs);
+  color: var(--grey-dark);
+  min-width: 80px;
+}
+
+.button {
+  background: var(--pink);
+  color: var(--chocolate);
+  border: none;
+  padding: var(--space-medium) var(--space-xl);
+  font-size: var(--font-small);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background 0.25s ease;
+  align-self: flex-start;
+}
+
+.button:hover {
+  background: #d9849f;
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 100px 24px 60px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

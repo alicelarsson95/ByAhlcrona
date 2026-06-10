@@ -104,8 +104,18 @@
   background: var(--grey-light);
 }
 
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.cardFooter {
+  padding: 0 var(--space-medium) var(--space-medium);
+}
+
 .info {
-  padding: var(--space-medium);
+  padding: var(--space-medium) var(--space-medium) var(--space-small);
   display: flex;
   flex-direction: column;
   gap: var(--space-xs);

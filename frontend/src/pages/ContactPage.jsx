@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styles from "./ContactPage.module.css";
 
 const IconInstagram = () => (
@@ -23,6 +24,31 @@ const IconFacebook = () => (
 );
 
 const Contact = () => {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState(null);
+
+  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("sending");
+    try {
+      const res = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (res.ok) {
+        setStatus("success");
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  };
+
   return (
     <footer id="contact" className={styles.footer}>
       <div className={styles.container}>
@@ -69,20 +95,24 @@ const Contact = () => {
             </div>
           </div>
 
-          <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
+          <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.fieldGroup}>
               <label className={styles.fieldLabel}>Namn</label>
-              <input type="text" className={styles.input} placeholder="Ditt namn" />
+              <input name="name" type="text" className={styles.input} placeholder="Ditt namn" value={form.name} onChange={handleChange} required />
             </div>
             <div className={styles.fieldGroup}>
               <label className={styles.fieldLabel}>E-post</label>
-              <input type="email" className={styles.input} placeholder="din@email.se" />
+              <input name="email" type="email" className={styles.input} placeholder="din@email.se" value={form.email} onChange={handleChange} required />
             </div>
             <div className={styles.fieldGroup}>
               <label className={styles.fieldLabel}>Meddelande</label>
-              <textarea className={styles.textarea} placeholder="Skriv ditt meddelande här..." rows={5} />
+              <textarea name="message" className={styles.textarea} placeholder="Skriv ditt meddelande här..." rows={5} value={form.message} onChange={handleChange} required />
             </div>
-            <button type="submit" className={styles.button}>Skicka</button>
+            <button type="submit" className={styles.button} disabled={status === "sending"}>
+              {status === "sending" ? "Skickar..." : "Skicka"}
+            </button>
+            {status === "success" && <p className={styles.successMsg}>Meddelandet skickades!</p>}
+            {status === "error" && <p className={styles.errorMsg}>Något gick fel, försök igen.</p>}
           </form>
         </div>
 

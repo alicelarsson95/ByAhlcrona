@@ -30,7 +30,10 @@
 .card {
   background: var(--white);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 .card:hover {
@@ -57,6 +60,7 @@
 }
 
 .button {
+  display: inline-block;
   background: var(--black);
   color: var(--white);
   border: none;

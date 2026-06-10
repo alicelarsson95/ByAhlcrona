@@ -45,11 +45,15 @@ const ShopPage = () => {
         <div className={styles.grid}>
           {filtered.map((product) => (
             <div key={product.id} className={styles.card}>
-              <div className={styles.image} />
-              <div className={styles.info}>
-                <span className={styles.category}>{product.category}</span>
-                <h3 className={styles.productTitle}>{product.title}</h3>
-                <p className={styles.price}>{fmt(product.price)}</p>
+              <Link to={`/shop/${product.id}`} className={styles.cardLink}>
+                <div className={styles.image} />
+                <div className={styles.info}>
+                  <span className={styles.category}>{product.category}</span>
+                  <h3 className={styles.productTitle}>{product.title}</h3>
+                  <p className={styles.price}>{fmt(product.price)}</p>
+                </div>
+              </Link>
+              <div className={styles.cardFooter}>
                 <button className={styles.button} onClick={() => addToCart(product)}>
                   Lägg i kundvagn
                 </button>
