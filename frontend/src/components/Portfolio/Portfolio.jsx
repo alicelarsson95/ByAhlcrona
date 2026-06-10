@@ -19,32 +19,32 @@ import whiteFlower from "../../assets/portfolio/white-flower.png";
 import whiteRedFlower from "../../assets/portfolio/white-red-flower.png";
 
 const artworks = [
-  { id: 1,  title: "Banan",          year: 2024, img: banana,          category: "Övrigt"       },
-  { id: 2,  title: "Blomtextur",     year: 2024, img: closeTextureFlower, category: "Tavlor"    },
-  { id: 3,  title: "Maskrosor",      year: 2023, img: dandelions,       category: "Tavlor"       },
-  { id: 4,  title: "Oliver",         year: 2023, img: olive,            category: "Övrigt"       },
-  { id: 5,  title: "Orange Blomma",  year: 2024, img: orangeFlower,     category: "Tavlor"       },
-  { id: 6,  title: "Rosa Blomma",    year: 2023, img: pinkFlower,       category: "Tavlor"       },
-  { id: 7,  title: "Pizza Time",     year: 2022, img: pizzaTime,        category: "Övrigt"       },
-  { id: 8,  title: "Röd Blomma II",  year: 2024, img: redFlower2,       category: "Tavlor"       },
-  { id: 9,  title: "Röd Blomma",     year: 2023, img: redFlower,        category: "Tavlor"       },
-  { id: 10, title: "Röda Löv",       year: 2022, img: redLeaves,        category: "Väggmålningar"},
-  { id: 11, title: "Röd-gul Blomma", year: 2024, img: redYellowFlower,  category: "Tavlor"       },
-  { id: 12, title: "Slice of Life",  year: 2023, img: sliceLife,        category: "Övrigt"       },
-  { id: 13, title: "Blomtextur II",  year: 2022, img: textureFlower,    category: "Väggmålningar"},
-  { id: 14, title: "Tomater",        year: 2024, img: tomatoes,         category: "Övrigt"       },
-  { id: 15, title: "Vit Blomma",     year: 2023, img: whiteFlower,      category: "Tavlor"       },
-  { id: 16, title: "Vit-röd Blomma", year: 2022, img: whiteRedFlower,   category: "Väggmålningar"},
+  { id: 1,  title: "Banan",          year: 2024, img: banana,            category: "Other"    },
+  { id: 2,  title: "Blomtextur",     year: 2024, img: closeTextureFlower, category: "Paintings" },
+  { id: 3,  title: "Maskrosor",      year: 2023, img: dandelions,         category: "Paintings" },
+  { id: 4,  title: "Oliver",         year: 2023, img: olive,              category: "Other"    },
+  { id: 5,  title: "Orange Blomma",  year: 2024, img: orangeFlower,       category: "Paintings" },
+  { id: 6,  title: "Rosa Blomma",    year: 2023, img: pinkFlower,         category: "Paintings" },
+  { id: 7,  title: "Pizza Time",     year: 2022, img: pizzaTime,          category: "Other"    },
+  { id: 8,  title: "Röd Blomma II",  year: 2024, img: redFlower2,         category: "Paintings" },
+  { id: 9,  title: "Röd Blomma",     year: 2023, img: redFlower,          category: "Paintings" },
+  { id: 10, title: "Röda Löv",       year: 2022, img: redLeaves,        category: "Murals"   },
+  { id: 11, title: "Röd-gul Blomma", year: 2024, img: redYellowFlower,  category: "Paintings" },
+  { id: 12, title: "Slice of Life",  year: 2023, img: sliceLife,        category: "Other"    },
+  { id: 13, title: "Blomtextur II",  year: 2022, img: textureFlower,    category: "Murals"   },
+  { id: 14, title: "Tomater",        year: 2024, img: tomatoes,         category: "Other"    },
+  { id: 15, title: "Vit Blomma",     year: 2023, img: whiteFlower,      category: "Paintings" },
+  { id: 16, title: "Vit-röd Blomma", year: 2022, img: whiteRedFlower,   category: "Murals"   },
 ];
 
 const PER_PAGE = 6;
-const FILTERS = ["Alla", "Tavlor", "Väggmålningar", "Övrigt"];
+const FILTERS = ["All", "Paintings", "Murals", "Other"];
 
 const Portfolio = () => {
   const [page, setPage] = useState(0);
-  const [filter, setFilter] = useState("Alla");
+  const [filter, setFilter] = useState("All");
 
-  const filtered = filter === "Alla" ? artworks : artworks.filter((a) => a.category === filter);
+  const filtered = filter === "All" ? artworks : artworks.filter((a) => a.category === filter);
   const totalPages = Math.ceil(filtered.length / PER_PAGE);
   const visible = filtered.slice(page * PER_PAGE, page * PER_PAGE + PER_PAGE);
 
@@ -57,6 +57,7 @@ const Portfolio = () => {
     <section id="portfolio">
       <div className={styles.container}>
         <h2 className={styles.portfolioTitle}>Portfolio</h2>
+
         <div className={styles.divider}></div>
 
         <div className={styles.buttons}>

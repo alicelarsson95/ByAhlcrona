@@ -20,8 +20,8 @@ const ProductDetail = () => {
       <>
         <Navbar />
         <main className={styles.page}>
-          <p>Produkten hittades inte.</p>
-          <Link to="/shop" className={styles.back}>← Tillbaka till shoppen</Link>
+          <p>Product not found.</p>
+          <Link to="/shop" className={styles.back}>← Back to shop</Link>
         </main>
       </>
     );
@@ -33,7 +33,7 @@ const ProductDetail = () => {
     <>
       <Navbar />
       <main className={styles.page}>
-        <Link to="/shop" className={styles.back}>← Tillbaka till shoppen</Link>
+        <Link to="/shop" className={styles.back}>← Back to shop</Link>
 
         <div className={styles.grid}>
           <div className={styles.imageCol}>
@@ -48,13 +48,13 @@ const ProductDetail = () => {
             <p className={styles.description}>{product.description}</p>
 
             <ul className={styles.meta}>
-              <li><span className={styles.metaLabel}>Teknik</span><span>{product.technique}</span></li>
-              <li><span className={styles.metaLabel}>Storlek</span><span>{product.size}</span></li>
-              <li><span className={styles.metaLabel}>År</span><span>{product.year}</span></li>
+              <li><span className={styles.metaLabel}>Technique</span><span>{product.technique}</span></li>
+              <li><span className={styles.metaLabel}>Size</span><span>{product.size}</span></li>
+              <li><span className={styles.metaLabel}>Year</span><span>{product.year}</span></li>
             </ul>
 
             <button className={styles.button} onClick={() => addToCart(product)}>
-              Lägg i kundvagn
+              Add to cart
             </button>
           </div>
         </div>

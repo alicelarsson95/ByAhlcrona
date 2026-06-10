@@ -5,17 +5,17 @@ import { useCart } from "../context/CartContext";
 import Navbar from "../components/Navbar/Navbar";
 import styles from "./ShopPage.module.css";
 
-const categories = ["Alla", "Print", "Original", "Limited"];
+const categories = ["All", "Print", "Original", "Limited"];
 
 const ShopPage = () => {
-  const [active, setActive] = useState("Alla");
+  const [active, setActive] = useState("All");
   const { addToCart } = useCart();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const filtered = active === "Alla" ? products : products.filter((p) => p.category === active);
+  const filtered = active === "All" ? products : products.filter((p) => p.category === active);
 
   const fmt = (n) => n.toLocaleString("sv-SE") + " kr";
 
@@ -24,9 +24,9 @@ const ShopPage = () => {
       <Navbar />
       <main className={styles.page}>
         <div className={styles.pageHeader}>
-          <Link to="/" className={styles.back}>← Tillbaka</Link>
-          <h1 className={styles.title}>Webshop</h1>
-          <p className={styles.subtitle}>Originalverk och prints tillgängliga för köp</p>
+          <Link to="/" className={styles.back}>← Back</Link>
+          <h1 className={styles.title}>Shop</h1>
+          <p className={styles.subtitle}>Original works and prints available for purchase</p>
           <div className={styles.divider} />
 
           <div className={styles.filters}>
@@ -55,7 +55,7 @@ const ShopPage = () => {
               </Link>
               <div className={styles.cardFooter}>
                 <button className={styles.button} onClick={() => addToCart(product)}>
-                  Lägg i kundvagn
+                  Add to cart
                 </button>
               </div>
             </div>

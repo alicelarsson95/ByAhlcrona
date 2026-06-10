@@ -10,8 +10,8 @@ const Shop = () => {
   return (
     <section id="shop">
       <div className={styles.container}>
-        <h2 className={styles.title}>Webshop</h2>
-        <p className={styles.subtitle}>Originalverk och prints tillgängliga för köp</p>
+        <h2 className={styles.title}>Shop</h2>
+        <p className={styles.subtitle}>Original works and prints available for purchase</p>
 
         <div className={styles.grid}>
           {featured.map((product) => (
@@ -20,14 +20,14 @@ const Shop = () => {
               <div className={styles.info}>
                 <h3>{product.title}</h3>
                 <p className={styles.price}>{fmt(product.price)}</p>
-                <span className={styles.button}>Köp</span>
+                <span className={styles.button}>Buy</span>
               </div>
             </Link>
           ))}
         </div>
       </div>
       <div className={styles.seeAll}>
-        <Link to="/shop" className={styles.seeAllLink}>Se alla produkter →</Link>
+        <Link to="/shop" className={styles.seeAllLink}>View all products →</Link>
       </div>
     </section>
   );

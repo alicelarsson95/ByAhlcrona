@@ -9,15 +9,15 @@ const Hero = () => {
   return (
     <section className={styles.hero}>
       <div className={styles.content}>
-        <p className={`${styles.kicker} ${styles.fadeIn}`}>Konst & Design</p>
+        <p className={`${styles.kicker} ${styles.fadeIn}`}>Art & Design</p>
         <h1 className={`${styles.title} ${styles.fadeIn} ${styles.fadeInDelay1}`}>Filippa Ahlcrona</h1>
         <p className={`${styles.tagline} ${styles.fadeIn} ${styles.fadeInDelay2}`}>
-          Världens bästa vän och konstnär
+          World's best friend and artist
         </p>
         <button
           className={`${styles.cta} ${styles.fadeIn} ${styles.fadeInDelay3}`}
           onClick={() => document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })}
-        >Utforska</button>
+        >Explore</button>
       </div>
 
       <div className={styles.collage}>

@@ -6,16 +6,16 @@ const About = () => {
     <section id="about" className={styles.section}>
       <div className={styles.container}>
         <div className={styles.textCol}>
-          <h2 className={styles.title}>Om konstnären</h2>
+          <h2 className={styles.title}>About the Artist</h2>
           <div className={styles.divider}></div>
           <p className={styles.bio}>
-            Filippa Ahlcrona är en svensk konstnär med ett hjärta för färg, form
-            och berättande. Med rötterna i Malmö skapar hon verk som rör sig
-            mellan det vardagliga och det drömlika — ofta med humor och värme
-            som röd tråd. Hennes arbete spänner över allt från intima
-            originalverk till väggmålningar i det offentliga rummet.
+            Filippa Ahlcrona is a Swedish artist with a passion for colour, form
+            and storytelling. Rooted in Malmö, she creates works that move
+            between the everyday and the dreamlike — often with humour and warmth
+            as a common thread. Her work spans from intimate original pieces
+            to large-scale murals in public spaces.
           </p>
-          <button className={styles.button}>Kontakta mig</button>
+          <button className={styles.button}>Contact me</button>
         </div>
 
         <div className={styles.imageCol}>

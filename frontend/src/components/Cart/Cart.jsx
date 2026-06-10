@@ -12,12 +12,12 @@ const Cart = () => {
 
       <aside className={`${styles.sidebar} ${isOpen ? styles.open : ""}`}>
         <div className={styles.header}>
-          <h2 className={styles.title}>Kundvagn</h2>
-          <button className={styles.close} onClick={() => setIsOpen(false)} aria-label="Stäng">✕</button>
+          <h2 className={styles.title}>Cart</h2>
+          <button className={styles.close} onClick={() => setIsOpen(false)} aria-label="Close">✕</button>
         </div>
 
         {items.length === 0 ? (
-          <p className={styles.empty}>Din kundvagn är tom.</p>
+          <p className={styles.empty}>Your cart is empty.</p>
         ) : (
           <>
             <ul className={styles.list}>
@@ -32,7 +32,7 @@ const Cart = () => {
                       <button className={styles.qtyBtn} onClick={() => updateQty(item.id, -1)}>−</button>
                       <span className={styles.qty}>{item.qty}</span>
                       <button className={styles.qtyBtn} onClick={() => updateQty(item.id, 1)}>+</button>
-                      <button className={styles.remove} onClick={() => removeFromCart(item.id)}>Ta bort</button>
+                      <button className={styles.remove} onClick={() => removeFromCart(item.id)}>Remove</button>
                     </div>
                   </div>
                 </li>
@@ -41,12 +41,12 @@ const Cart = () => {
 
             <div className={styles.footer}>
               <div className={styles.totalRow}>
-                <span>Totalt</span>
+                <span>Total</span>
                 <span className={styles.totalPrice}>{fmt(totalPrice)}</span>
               </div>
-              <button className={styles.checkout}>Till kassan</button>
+              <button className={styles.checkout}>Checkout</button>
               <button className={styles.continueShopping} onClick={() => setIsOpen(false)}>
-                Fortsätt handla
+                Continue shopping
               </button>
             </div>
           </>

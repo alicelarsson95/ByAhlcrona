@@ -52,33 +52,31 @@ const Contact = () => {
   return (
     <footer id="contact" className={styles.footer}>
       <div className={styles.container}>
-        <h2 className={styles.title}>Kontakt</h2>
+        <h2 className={styles.title}>Contact</h2>
         <div className={styles.divider}></div>
 
         <div className={styles.grid}>
           <div className={styles.infoCol}>
             <ul className={styles.infoList}>
               <li>
-                <span className={styles.label}>E-post</span>
+                <span className={styles.label}>Email</span>
                 <a href="mailto:filippa@byahlcrona.se" className={styles.link}>
                   filippa@byahlcrona.se
                 </a>
               </li>
               <li>
-                <span className={styles.label}>Telefon</span>
+                <span className={styles.label}>Phone</span>
                 <a href="tel:+46701234567" className={styles.link}>
                   +46 70 123 45 67
                 </a>
               </li>
               <li>
-                <span className={styles.label}>Stad</span>
-                <span>Malmö
-                
-                </span>
+                <span className={styles.label}>City</span>
+                <span>Malmö</span>
               </li>
               <li>
-                <span className={styles.label}>Land</span>
-                <span>Sverige</span>
+                <span className={styles.label}>Country</span>
+                <span>Sweden</span>
               </li>
             </ul>
 
@@ -97,26 +95,26 @@ const Contact = () => {
 
           <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.fieldGroup}>
-              <label className={styles.fieldLabel}>Namn</label>
-              <input name="name" type="text" className={styles.input} placeholder="Ditt namn" value={form.name} onChange={handleChange} required />
+              <label className={styles.fieldLabel}>Name</label>
+              <input name="name" type="text" className={styles.input} placeholder="Your name" value={form.name} onChange={handleChange} required />
             </div>
             <div className={styles.fieldGroup}>
-              <label className={styles.fieldLabel}>E-post</label>
-              <input name="email" type="email" className={styles.input} placeholder="din@email.se" value={form.email} onChange={handleChange} required />
+              <label className={styles.fieldLabel}>Email</label>
+              <input name="email" type="email" className={styles.input} placeholder="your@email.com" value={form.email} onChange={handleChange} required />
             </div>
             <div className={styles.fieldGroup}>
-              <label className={styles.fieldLabel}>Meddelande</label>
-              <textarea name="message" className={styles.textarea} placeholder="Skriv ditt meddelande här..." rows={5} value={form.message} onChange={handleChange} required />
+              <label className={styles.fieldLabel}>Message</label>
+              <textarea name="message" className={styles.textarea} placeholder="Write your message here..." rows={5} value={form.message} onChange={handleChange} required />
             </div>
             <button type="submit" className={styles.button} disabled={status === "sending"}>
-              {status === "sending" ? "Skickar..." : "Skicka"}
+              {status === "sending" ? "Sending..." : "Send"}
             </button>
-            {status === "success" && <p className={styles.successMsg}>Meddelandet skickades!</p>}
-            {status === "error" && <p className={styles.errorMsg}>Något gick fel, försök igen.</p>}
+            {status === "success" && <p className={styles.successMsg}>Message sent!</p>}
+            {status === "error" && <p className={styles.errorMsg}>Something went wrong, please try again.</p>}
           </form>
         </div>
 
-        <p className={styles.copy}>© {new Date().getFullYear()} By Ahlcrona. Alla rättigheter förbehållna.</p>
+        <p className={styles.copy}>© {new Date().getFullYear()} By Ahlcrona. All rights reserved.</p>
       </div>
     </footer>
   );

@@ -33,7 +33,7 @@ const Navbar = () => {
           <Link className={styles.navLink} to="/shop">SHOP</Link>
           <a className={styles.navLink} href="/#about">ABOUT</a>
           <a className={styles.navLink} href="/#contact">CONTACT</a>
-          <button className={styles.cartBtn} onClick={() => setIsOpen(true)} aria-label="Öppna kundvagn">
+          <button className={styles.cartBtn} onClick={() => setIsOpen(true)} aria-label="Open cart">
             <CartIcon />
             {totalItems > 0 && <span className={styles.badge}>{totalItems}</span>}
           </button>
