@@ -1,6 +1,6 @@
 .page {
   min-height: 100vh;
-  background: var(--background);
+  background: #f0f5ff;
   padding-top: 100px;
   padding-bottom: 80px;
 }
@@ -24,7 +24,7 @@
 }
 
 .back:hover {
-  color: var(--black);
+  color: var(--chocolate);
 }
 
 .title {
@@ -56,8 +56,9 @@
 
 .filterBtn {
   padding: var(--space-small) var(--space-large);
-  border: 1px solid var(--grey-light);
+  border: 1.5px solid var(--skyblue);
   background: transparent;
+  color: var(--chocolate);
   cursor: pointer;
   font-size: var(--font-xs);
   letter-spacing: 0.1em;
@@ -66,13 +67,13 @@
 }
 
 .filterBtn:hover {
-  border-color: var(--black);
+  border-color: var(--chocolate);
 }
 
 .filterBtn.active {
-  background: var(--black);
+  background: var(--pink);
   color: var(--white);
-  border-color: var(--black);
+  border-color: var(--pink);
 }
 
 .grid {
@@ -87,12 +88,14 @@
 .card {
   background: var(--white);
   overflow: hidden;
+  border: 1px solid var(--skyblue);
+  box-shadow: 0 2px 12px rgba(61, 25, 0, 0.06);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 30px rgba(61, 25, 0, 0.12);
 }
 
 .image {
@@ -129,18 +132,18 @@
 
 .button {
   margin-top: var(--space-small);
-  background: var(--black);
-  color: var(--white);
+  background: var(--pink);
+  color: var(--chocolate);
   border: none;
   padding: var(--space-small) var(--space-medium);
   font-size: var(--font-xs);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   cursor: pointer;
+  font-weight: 700;
   transition: background 0.25s ease;
 }
 
 .button:hover {
-  background: var(--pink);
-  color: var(--black);
+  background: #d9849f;
 }

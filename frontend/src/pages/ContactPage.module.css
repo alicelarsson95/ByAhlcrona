@@ -15,13 +15,13 @@
   letter-spacing: 0.05em;
   text-align: center;
   margin: 0 0 var(--space-medium) 0;
-  color: var(--white);
+  color: var(--skyblue);
 }
 
 .divider {
   width: 60px;
   height: 1px;
-  background-color: var(--grey-light);
+  background-color: var(--pink);
   margin: 0 auto var(--space-xl);
 }
 
@@ -51,7 +51,7 @@
   font-size: var(--font-xs);
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: var(--grey-light);
+  color: var(--skyblue);
 }
 
 .link {
@@ -62,7 +62,7 @@
 }
 
 .link:hover {
-  color: var(--grey-light);
+  color: var(--skyblue);
 }
 
 .infoList li span:not(.label) {
@@ -75,7 +75,7 @@
 }
 
 .socialLink {
-  color: var(--grey-light);
+  color: var(--pink);
   transition: color 0.25s ease;
   display: flex;
   align-items: center;
@@ -101,47 +101,50 @@
   font-size: var(--font-xs);
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: var(--grey-light);
+  color: var(--skyblue);
 }
 
 .input,
 .textarea {
-  background-color: transparent;
-  border: 1px solid var(--grey-dark);
-  color: var(--white);
+  background-color: var(--white);
+  border: 1.5px solid var(--chocolate);
+  color: var(--chocolate);
   padding: 12px var(--space-medium);
   font-size: var(--font-medium);
   font-family: inherit;
   outline: none;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
   resize: none;
 }
 
 .input::placeholder,
 .textarea::placeholder {
-  color: var(--grey-dark);
+  color: var(--grey-light);
 }
 
 .input:focus,
 .textarea:focus {
-  border-color: var(--skyblue);
+  border-color: var(--pink);
+  background-color: var(--skyblue);
 }
 
 .button {
   align-self: flex-start;
-  background-color: var(--white);
-  color: var(--black);
+  background-color: var(--pink);
+  color: var(--chocolate);
   border: none;
   padding: var(--space-small) var(--space-large);
   font-size: var(--font-small);
   text-transform: uppercase;
   letter-spacing: 0.15em;
   cursor: pointer;
+  font-weight: 700;
   transition: all 0.25s ease;
 }
 
 .button:hover {
   background-color: var(--skyblue);
+  color: var(--chocolate);
 }
 
 .copy {

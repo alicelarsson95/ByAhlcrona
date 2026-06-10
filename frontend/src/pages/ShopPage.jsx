@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { products } from "../data/products";
 import { useCart } from "../context/CartContext";
@@ -10,6 +10,10 @@ const categories = ["Alla", "Print", "Original", "Limited"];
 const ShopPage = () => {
   const [active, setActive] = useState("Alla");
   const { addToCart } = useCart();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const filtered = active === "Alla" ? products : products.filter((p) => p.category === active);
 

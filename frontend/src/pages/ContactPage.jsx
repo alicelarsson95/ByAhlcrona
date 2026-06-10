@@ -46,7 +46,9 @@ const Contact = () => {
               </li>
               <li>
                 <span className={styles.label}>Stad</span>
-                <span>Göteborg</span>
+                <span>Malmö
+                
+                </span>
               </li>
               <li>
                 <span className={styles.label}>Land</span>
