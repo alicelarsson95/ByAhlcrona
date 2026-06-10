@@ -13,6 +13,7 @@ const CartIcon = () => (
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const { totalItems, setIsOpen } = useCart();
   const location = useLocation();
   const isShopPage = location.pathname.startsWith("/shop");
@@ -24,19 +25,39 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isShopPage]);
 
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location]);
+
+  const closeMenu = () => setMenuOpen(false);
+
   return (
-    <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}>
+    <nav className={`${styles.nav} ${scrolled || menuOpen ? styles.scrolled : ""}`}>
       <div className={styles.container}>
-        <Link to="/" className={styles.navTitle}>BY AHLCRONA</Link>
-        <div className={styles.links}>
-          <a className={styles.navLink} href="/#portfolio">PORTFOLIO</a>
-          <Link className={styles.navLink} to="/shop">SHOP</Link>
-          <a className={styles.navLink} href="/#about">ABOUT</a>
-          <a className={styles.navLink} href="/#contact">CONTACT</a>
+        <Link to="/" className={styles.navTitle} onClick={closeMenu}>BY AHLCRONA</Link>
+
+        <div className={styles.right}>
           <button className={styles.cartBtn} onClick={() => setIsOpen(true)} aria-label="Open cart">
             <CartIcon />
             {totalItems > 0 && <span className={styles.badge}>{totalItems}</span>}
           </button>
+
+          <button
+            className={styles.hamburger}
+            onClick={() => setMenuOpen((o) => !o)}
+            aria-label="Toggle menu"
+          >
+            <span className={`${styles.bar} ${menuOpen ? styles.barOpen1 : ""}`} />
+            <span className={`${styles.bar} ${menuOpen ? styles.barOpen2 : ""}`} />
+            <span className={`${styles.bar} ${menuOpen ? styles.barOpen3 : ""}`} />
+          </button>
+        </div>
+
+        <div className={`${styles.links} ${menuOpen ? styles.linksOpen : ""}`}>
+          <a className={styles.navLink} href="/#portfolio" onClick={closeMenu}>PORTFOLIO</a>
+          <Link className={styles.navLink} to="/shop" onClick={closeMenu}>SHOP</Link>
+          <a className={styles.navLink} href="/#about" onClick={closeMenu}>ABOUT</a>
+          <a className={styles.navLink} href="/#contact" onClick={closeMenu}>CONTACT</a>
         </div>
       </div>
     </nav>

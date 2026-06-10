@@ -1,6 +1,7 @@
 .footer {
   background-color: var(--chocolate);
   color: var(--white);
+  scroll-margin-top: 20px;
 }
 
 .container {
@@ -111,7 +112,8 @@
   color: var(--chocolate);
   padding: 12px var(--space-medium);
   font-size: var(--font-medium);
-  font-family: inherit;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 300;
   outline: none;
   transition: border-color 0.2s ease, background-color 0.2s ease;
   resize: none;
@@ -125,7 +127,7 @@
 .input:focus,
 .textarea:focus {
   border-color: var(--pink);
-  background-color: var(--skyblue);
+  background-color: var(--white);
 }
 
 .button {

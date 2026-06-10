@@ -17,12 +17,21 @@
   max-width: 1900px;
   padding: 20px 40px;
   box-sizing: border-box;
+  flex-wrap: wrap;
+  gap: 0;
 }
 
 .navTitle {
   color: var(--black);
   font-size: var(--font-medium);
   text-decoration: none;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  order: 3;
 }
 
 .cartBtn {
@@ -59,9 +68,38 @@
   line-height: 1;
 }
 
+/* HAMBURGER */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.bar {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--black);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.barOpen1 { transform: translateY(6.5px) rotate(45deg); }
+.barOpen2 { opacity: 0; }
+.barOpen3 { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* DESKTOP LINKS */
+
 .links {
   display: flex;
   gap: 20px;
+  align-items: center;
+  order: 2;
 }
 
 .navLink {
@@ -78,7 +116,7 @@
   bottom: -4px;
   width: 0;
   height: 1.4px;
- background: var(--chocolate);
+  background: var(--chocolate);
   transition: width 0.3s ease;
 }
 
@@ -87,10 +125,57 @@
 }
 
 .scrolled {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 18px 24px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 8px 0 8px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 12px;
+  }
+
+  .linksOpen {
+    display: flex;
+  }
+
+  .navLink {
+    width: 100%;
+    padding: 12px 0;
+    font-size: var(--font-medium);
+    font-weight: 400;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    letter-spacing: 0.08em;
+    transition: transform 0.2s ease;
+    display: inline-block;
+  }
+
+  .navLink:hover {
+    transform: scale(1.05);
+    transform-origin: left center;
+  }
+
+  .navLink::after {
+    display: none;
+  }
 }
 
 @keyframes slideDown {

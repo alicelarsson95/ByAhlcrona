@@ -166,3 +166,47 @@
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 28px 80px;
+    gap: 48px;
+    text-align: center;
+  }
+
+  .content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .collage {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    height: 210px;
+    flex-shrink: 1;
+  }
+
+  .imgCard {
+    width: 110px;
+    padding: 8px;
+    padding-bottom: 22px;
+  }
+
+  .img1 { top: 20px; left: 0px;   animation-delay: 0.3s; }
+  .img2 { top: 10px; left: 125px; animation-delay: 0.5s; }
+  .img3 { display: none; }
+  .img4 { top: 25px; left: 250px; animation-delay: 0.6s; }
+  .img5 { display: none; }
+
+  .scrollIndicator {
+    display: none;
+  }
+}

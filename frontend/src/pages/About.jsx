@@ -15,7 +15,7 @@ const About = () => {
             as a common thread. Her work spans from intimate original pieces
             to large-scale murals in public spaces.
           </p>
-          <button className={styles.button}>Contact me</button>
+          <button className={styles.button} onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>Contact me</button>
         </div>
 
         <div className={styles.imageCol}>
