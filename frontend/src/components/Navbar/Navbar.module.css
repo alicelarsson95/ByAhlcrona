@@ -131,6 +131,19 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
+/* Desktop: länkarna i exakt mitten, oavsett bredd på logga och varukorg */
+@media (min-width: 769px) {
+  .container {
+    position: relative;
+  }
+
+  .links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 /* MOBILE */
 
 @media (max-width: 768px) {
