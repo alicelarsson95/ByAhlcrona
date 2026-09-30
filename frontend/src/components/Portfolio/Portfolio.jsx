@@ -1,22 +1,22 @@
 import { useState } from "react";
 import styles from "./Portfolio.module.css";
 
-import banana from "../../assets/portfolio/banana.jpg";
-import closeTextureFlower from "../../assets/portfolio/close-texture-flower.png";
-import dandelions from "../../assets/portfolio/dandelions.png";
-import olive from "../../assets/portfolio/olive.png";
-import orangeFlower from "../../assets/portfolio/orange-flower.png";
-import pinkFlower from "../../assets/portfolio/pink-flower.jpg";
-import pizzaTime from "../../assets/portfolio/pizza-time.png";
-import redFlower2 from "../../assets/portfolio/red-flower-2.png";
-import redFlower from "../../assets/portfolio/red-flower.png";
-import redLeaves from "../../assets/portfolio/red-leaves.png";
-import redYellowFlower from "../../assets/portfolio/red-yellow-flower.png";
-import sliceLife from "../../assets/portfolio/slice-life.jpg";
-import textureFlower from "../../assets/portfolio/texture-flower.png";
-import tomatoes from "../../assets/portfolio/tomatoes.png";
-import whiteFlower from "../../assets/portfolio/white-flower.png";
-import whiteRedFlower from "../../assets/portfolio/white-red-flower.png";
+import banana from "../../assets/portfolio/banana.webp";
+import closeTextureFlower from "../../assets/portfolio/close-texture-flower.webp";
+import dandelions from "../../assets/portfolio/dandelions.webp";
+import olive from "../../assets/portfolio/olive.webp";
+import orangeFlower from "../../assets/portfolio/orange-flower.webp";
+import pinkFlower from "../../assets/portfolio/pink-flower.webp";
+import pizzaTime from "../../assets/portfolio/pizza-time.webp";
+import redFlower2 from "../../assets/portfolio/red-flower-2.webp";
+import redFlower from "../../assets/portfolio/red-flower.webp";
+import redLeaves from "../../assets/portfolio/red-leaves.webp";
+import redYellowFlower from "../../assets/portfolio/red-yellow-flower.webp";
+import sliceLife from "../../assets/portfolio/slice-life.webp";
+import textureFlower from "../../assets/portfolio/texture-flower.webp";
+import tomatoes from "../../assets/portfolio/tomatoes.webp";
+import whiteFlower from "../../assets/portfolio/white-flower.webp";
+import whiteRedFlower from "../../assets/portfolio/white-red-flower.webp";
 
 const artworks = [
   { id: 1,  title: "Banan",          year: 2024, img: banana,            category: "Other"    },

@@ -1,9 +1,9 @@
 import styles from "./Hero.module.css";
-import img1 from "../../assets/portfolio/banana.jpg";
-import img2 from "../../assets/portfolio/pink-flower.jpg";
-import img3 from "../../assets/portfolio/pizza-time.png";
-import img4 from "../../assets/portfolio/dandelions.png";
-import img5 from "../../assets/portfolio/slice-life.jpg";
+import img1 from "../../assets/portfolio/banana.webp";
+import img2 from "../../assets/portfolio/pink-flower.webp";
+import img3 from "../../assets/portfolio/pizza-time.webp";
+import img4 from "../../assets/portfolio/dandelions.webp";
+import img5 from "../../assets/portfolio/slice-life.webp";
 
 const Hero = () => {
   return (
