@@ -1,5 +1,12 @@
 @import "./variables.css";
 
+/* Demolicens: bara för lokal test. Filen ligger i .gitignore. */
+@font-face {
+  font-family: 'Tropi Land';
+  src: url("../assets/fonts/tropi-land.ttf") format("truetype");
+  font-display: swap;
+}
+
 *,
 *::before,
 *::after {

@@ -1,34 +1,42 @@
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import styles from "./Hero.module.css";
-import img1 from "../../assets/portfolio/banana.jpg";
-import img2 from "../../assets/portfolio/pink-flower.jpg";
-import img3 from "../../assets/portfolio/pizza-time.png";
-import img4 from "../../assets/portfolio/dandelions.png";
-import img5 from "../../assets/portfolio/slice-life.jpg";
+import dandelions from "../../assets/portfolio/dandelions.webp";
+import pinkFlower from "../../assets/portfolio/pink-flower.webp";
+import sliceLife from "../../assets/portfolio/slice-life.webp";
+import redYellowFlower from "../../assets/portfolio/red-yellow-flower.webp";
+import tomatoes from "../../assets/portfolio/tomatoes.webp";
+
+// I visningsordning, vänster till höger
+const works = [dandelions, pinkFlower, sliceLife, redYellowFlower, tomatoes];
 
 const Hero = () => {
+  // Blomm-i:t (U+F006) finns bara i Tropi Land. Använd det först när fonten
+  // har laddats, annars blir det tomma rutor i reservfonten.
+  const [flowerI, setFlowerI] = useState(false);
+
+  useEffect(() => {
+    document.fonts
+      .load("1em 'Tropi Land'", "\uF006")
+      .then((fonts) => setFlowerI(fonts.length > 0))
+      .catch(() => {});
+  }, []);
+
+  const i = flowerI ? "\uF006" : "i";
+
   return (
     <section className={styles.hero}>
-      <div className={styles.content}>
-        <p className={`${styles.kicker} ${styles.fadeIn}`}>Art & Design</p>
-        <h1 className={`${styles.title} ${styles.fadeIn} ${styles.fadeInDelay1}`}>Filippa Ahlcrona</h1>
-        <p className={`${styles.tagline} ${styles.fadeIn} ${styles.fadeInDelay2}`}>
-          World's best friend and artist
-        </p>
-        <button
-          className={`${styles.cta} ${styles.fadeIn} ${styles.fadeInDelay3}`}
-          onClick={() => document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })}
-        >Explore</button>
-      </div>
+      <p className={`${styles.kicker} ${styles.fadeIn}`}>Art & Design · Malmö</p>
+      <h1 className={`${styles.title} ${styles.fadeIn} ${styles.fadeInDelay1}`} aria-label="Filippa Ahlcrona">
+        F{i}l{i}ppa Ahlcrona
+      </h1>
 
-      <div className={styles.collage}>
-        <div className={`${styles.imgCard} ${styles.img1}`}><img src={img1} alt="" /></div>
-        <div className={`${styles.imgCard} ${styles.img2}`}><img src={img2} alt="" /></div>
-        <div className={`${styles.imgCard} ${styles.img3}`}><img src={img3} alt="" /></div>
-        <div className={`${styles.imgCard} ${styles.img4}`}><img src={img4} alt="" /></div>
-        <div className={`${styles.imgCard} ${styles.img5}`}><img src={img5} alt="" /></div>
+      <div className={styles.works}>
+        {works.map((src, index) => (
+          <img key={src} src={src} alt="" className={`${styles.work} ${styles[`w${index + 1}`]}`} />
+        ))}
+        <Link to="/shop" className={styles.sticker}>Shop prints</Link>
       </div>
-
-      <div className={styles.scrollIndicator}>˅</div>
     </section>
   );
 };
