@@ -36,4 +36,11 @@
 
   /* LAYOUT */
   --container-width: 1200px;
+  --nav-height: 60px; /* navbarens höjd, används även som scroll-margin-top */
+}
+
+@media (max-width: 768px) {
+  :root {
+    --nav-height: 56px;
+  }
 }

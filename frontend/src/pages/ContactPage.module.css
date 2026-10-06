@@ -1,7 +1,6 @@
 .footer {
   background-color: var(--chocolate);
   color: var(--white);
-  scroll-margin-top: 20px;
 }
 
 .container {
