@@ -1,5 +1,5 @@
 .portfolio {
-  padding: 120px 40px;
+  padding: 64px 40px 120px;
   background: var(--skyblue-light);
   color: var(--chocolate);
 }
@@ -66,7 +66,7 @@
 
 @media (max-width: 768px) {
   .portfolio {
-    padding: 80px 16px;
+    padding: 40px 16px 80px;
   }
 
   .title {

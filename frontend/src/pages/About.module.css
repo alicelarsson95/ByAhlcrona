@@ -1,11 +1,17 @@
+/* Fyller skärmen under menyn, så att Contact inte syns när man klickar på ABOUT.
+   Lika padding upp och ner så att innehållet hamnar mitt i. */
 .section {
-  padding: 120px 40px;
+  min-height: calc(100vh - var(--nav-height));
+  display: flex;
+  align-items: center;
+  padding: 64px 40px;
   background-color: var(--skyblue-light);
   color: var(--chocolate);
   overflow: hidden;
 }
 
 .container {
+  width: 100%;
   max-width: var(--container-width);
   margin: 0 auto;
   display: grid;
@@ -115,7 +121,7 @@
 
 @media (max-width: 768px) {
   .section {
-    padding: 80px 16px;
+    padding: 40px 16px 80px;
   }
 
   .container {
