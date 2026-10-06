@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import styles from "./Hero.module.css";
 import dandelions from "../../assets/portfolio/dandelions.webp";
 import pinkFlower from "../../assets/portfolio/pink-flower.webp";
@@ -35,7 +34,7 @@ const Hero = () => {
         {works.map((src, index) => (
           <img key={src} src={src} alt="" className={`${styles.work} ${styles[`w${index + 1}`]}`} />
         ))}
-        <Link to="/shop" className={styles.sticker}>Shop prints</Link>
+        <a href="#murals" className={styles.sticker}>See murals</a>
       </div>
     </section>
   );
