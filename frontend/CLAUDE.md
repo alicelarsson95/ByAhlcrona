@@ -21,7 +21,6 @@ Webbshop + portfolio för konstnären Filippa Ahlcrona. Mitt (Alice) portfoliopr
 - Checkout-knappen gör ingenting ännu
 - Kontaktformuläret anropar `http://localhost:5000` hårdkodat
 - Kontaktuppgifter (telefon m.m.) är platshållare
-- README är tom
 
 ## Hur jag vill jobba
 - Sidan är på engelska, men prata svenska med mig
