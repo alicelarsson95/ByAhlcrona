@@ -1,81 +1,147 @@
+/* Fyller skärmen under menyn, så att Contact inte syns när man klickar på ABOUT.
+   Lika padding upp och ner så att innehållet hamnar mitt i. */
 .section {
-  background-color: var(--skyblue);
+  min-height: calc(100vh - var(--nav-height));
+  display: flex;
+  align-items: center;
+  padding: 64px 40px;
+  background-color: var(--skyblue-light);
+  color: var(--chocolate);
+  overflow: hidden;
 }
 
 .container {
-  max-width: 1200px;
+  width: 100%;
+  max-width: var(--container-width);
   margin: 0 auto;
-  padding: 80px var(--space-xl);
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 96px;
   align-items: center;
-  gap: 80px;
 }
 
+/* BILD */
+
+.imageCol {
+  display: flex;
+  justify-content: center;
+}
+
+.photoWrap {
+  position: relative;
+  width: min(100%, 420px);
+}
+
+/* Himmelsblå båge bakom fotot, lite förskjuten */
+.photoWrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px 999px 0 0;
+  background: var(--skyblue);
+  transform: translate(24px, 24px);
+}
+
+.photo {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 999px 999px 0 0; /* bågform: helt rund överkant */
+}
+
+.sticker {
+  position: absolute;
+  top: 8%;
+  right: -36px;
+  z-index: 1;
+  width: 128px;
+  height: 128px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  border-radius: 50%;
+  background: var(--pink);
+  color: var(--chocolate);
+  font-family: 'Tropi Land', 'Shrikhand', sans-serif;
+  font-size: 24px;
+  line-height: 1.05;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(61, 25, 0, 0.2);
+  transform: rotate(12deg);
+}
+
+/* TEXT */
+
 .textCol {
-  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
 .title {
-  font-size: var(--font-xxl);
-  font-weight: 300;
-  letter-spacing: 0.05em;
-  margin: 0 0 var(--space-medium) 0;
-  color: var(--black);
-}
-
-.divider {
-  width: 60px;
-  height: 1px;
-  background-color: var(--grey-dark);
-  margin-bottom: var(--space-xl);
+  margin: 0 0 var(--space-large);
+  font-family: 'Tropi Land', 'Shrikhand', sans-serif;
+  font-size: clamp(2.75rem, 6vw, 5rem);
+  font-weight: normal;
+  line-height: 1.1;
 }
 
 .bio {
+  max-width: 48ch;
+  margin: 0 0 var(--space-xl);
   font-size: var(--font-medium);
-  color: var(--grey-dark);
   line-height: 1.8;
-  margin: 0 0 var(--space-xl) 0;
-  max-width: 480px;
 }
 
 .button {
-  background-color: var(--black);
-  color: var(--white);
+  padding: 14px 32px;
   border: none;
-  padding: var(--space-small) var(--space-large);
+  border-radius: 999px;
+  background: var(--pink);
+  color: var(--chocolate);
+  font-family: inherit;
   font-size: var(--font-small);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: transform 0.3s ease;
 }
 
 .button:hover {
-  background-color: var(--pink);
-  color: var(--black);
+  transform: translateY(-3px);
 }
 
-.imageCol {
-  flex: 1;
-}
-
-.imagePlaceholder img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.button:focus-visible {
+  outline: 3px solid var(--chocolate);
+  outline-offset: 4px;
 }
 
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    gap: var(--space-xl);
-    padding: 60px var(--space-large);
+  .section {
+    padding: 40px 16px 80px;
   }
 
-  .imageCol {
-    width: 100%;
+  .container {
+    grid-template-columns: 1fr;
+    gap: 64px;
+  }
+
+  .photoWrap {
+    width: min(78%, 340px);
+  }
+
+  .photoWrap::before {
+    transform: translate(14px, 14px);
+  }
+
+  .sticker {
+    right: -24px;
+    width: 96px;
+    height: 96px;
+    padding: 10px;
+    font-size: 18px;
   }
 }

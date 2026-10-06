@@ -21,6 +21,8 @@ body {
   background: var(--background);
 }
 
-section[id] {
-  scroll-margin-top: 80px;
+/* Ankarlänkar landar precis under den fasta navbaren */
+section[id],
+footer[id] {
+  scroll-margin-top: var(--nav-height);
 }

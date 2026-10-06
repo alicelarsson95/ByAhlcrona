@@ -1,0 +1,33 @@
+.footer {
+  background: var(--chocolate);
+  color: var(--skyblue-light);
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 28px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-medium);
+}
+
+.brand {
+  font-size: var(--font-medium);
+}
+
+.copy {
+  font-size: var(--font-xs);
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 24px 16px;
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-small);
+  }
+}

@@ -1,10 +1,11 @@
 import { useEffect } from "react";
 import Navbar from "../components/Navbar/Navbar";
 import Hero from "../components/Hero/Hero"
+import Murals from "../components/Murals/Murals";
 import Portfolio from "../components/Portfolio/Portfolio";
-import Shop from "../components/Shop/Shop";
 import About from "./About";
 import Contact from "./ContactPage";
+import Footer from "../components/Footer/Footer";
 
 const Home = () => {
   useEffect(() => {
@@ -24,10 +25,11 @@ const Home = () => {
     <>
     <Navbar />
       <Hero />
+      <Murals />
       <Portfolio />
-       <Shop />
       <About />
       <Contact />
+      <Footer />
     </>
   );
 };
