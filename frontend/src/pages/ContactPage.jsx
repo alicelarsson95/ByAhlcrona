@@ -50,13 +50,15 @@ const Contact = () => {
   };
 
   return (
-    <footer id="contact" className={styles.footer}>
+    <section id="contact" className={styles.contact}>
       <div className={styles.container}>
-        <h2 className={styles.title}>Contact</h2>
-        <div className={styles.divider}></div>
-
         <div className={styles.grid}>
           <div className={styles.infoCol}>
+            <h2 className={styles.title}>Let's make something</h2>
+            <p className={styles.lead}>
+              Murals, commissions or a collaboration? Tell me what you have in mind.
+            </p>
+
             <ul className={styles.infoList}>
               <li>
                 <span className={styles.label}>Email</span>
@@ -95,16 +97,16 @@ const Contact = () => {
 
           <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.fieldGroup}>
-              <label className={styles.fieldLabel}>Name</label>
-              <input name="name" type="text" className={styles.input} placeholder="Your name" value={form.name} onChange={handleChange} required />
+              <label htmlFor="contact-name" className={styles.fieldLabel}>Name</label>
+              <input id="contact-name" name="name" type="text" className={styles.input} placeholder="Your name" value={form.name} onChange={handleChange} required />
             </div>
             <div className={styles.fieldGroup}>
-              <label className={styles.fieldLabel}>Email</label>
-              <input name="email" type="email" className={styles.input} placeholder="your@email.com" value={form.email} onChange={handleChange} required />
+              <label htmlFor="contact-email" className={styles.fieldLabel}>Email</label>
+              <input id="contact-email" name="email" type="email" className={styles.input} placeholder="your@email.com" value={form.email} onChange={handleChange} required />
             </div>
             <div className={styles.fieldGroup}>
-              <label className={styles.fieldLabel}>Message</label>
-              <textarea name="message" className={styles.textarea} placeholder="Write your message here..." rows={5} value={form.message} onChange={handleChange} required />
+              <label htmlFor="contact-message" className={styles.fieldLabel}>Message</label>
+              <textarea id="contact-message" name="message" className={styles.textarea} placeholder="Write your message here..." rows={5} value={form.message} onChange={handleChange} required />
             </div>
             <button type="submit" className={styles.button} disabled={status === "sending"}>
               {status === "sending" ? "Sending..." : "Send"}
@@ -113,10 +115,8 @@ const Contact = () => {
             {status === "error" && <p className={styles.errorMsg}>Something went wrong, please try again.</p>}
           </form>
         </div>
-
-        <p className={styles.copy}>© {new Date().getFullYear()} By Ahlcrona. All rights reserved.</p>
       </div>
-    </footer>
+    </section>
   );
 };
 

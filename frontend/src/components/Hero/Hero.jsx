@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import styles from "./Hero.module.css";
+import useFlowerI from "../../hooks/useFlowerI";
 import dandelions from "../../assets/portfolio/dandelions.webp";
 import pinkFlower from "../../assets/portfolio/pink-flower.webp";
 import sliceLife from "../../assets/portfolio/slice-life.webp";
@@ -10,18 +10,7 @@ import tomatoes from "../../assets/portfolio/tomatoes.webp";
 const works = [dandelions, pinkFlower, sliceLife, redYellowFlower, tomatoes];
 
 const Hero = () => {
-  // Blomm-i:t (U+F006) finns bara i Tropi Land. Använd det först när fonten
-  // har laddats, annars blir det tomma rutor i reservfonten.
-  const [flowerI, setFlowerI] = useState(false);
-
-  useEffect(() => {
-    document.fonts
-      .load("1em 'Tropi Land'", "\uF006")
-      .then((fonts) => setFlowerI(fonts.length > 0))
-      .catch(() => {});
-  }, []);
-
-  const i = flowerI ? "\uF006" : "i";
+  const i = useFlowerI();
 
   return (
     <section className={styles.hero}>

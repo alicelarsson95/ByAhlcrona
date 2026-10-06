@@ -5,6 +5,7 @@ import Murals from "../components/Murals/Murals";
 import Portfolio from "../components/Portfolio/Portfolio";
 import About from "./About";
 import Contact from "./ContactPage";
+import Footer from "../components/Footer/Footer";
 
 const Home = () => {
   useEffect(() => {
@@ -28,6 +29,7 @@ const Home = () => {
       <Portfolio />
       <About />
       <Contact />
+      <Footer />
     </>
   );
 };
